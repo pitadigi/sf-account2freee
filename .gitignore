@@ -26,3 +26,8 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+
+authproviders/
+namedCredentials/
+remoteSiteSettings/
+layouts/
