@@ -94,15 +94,18 @@ public with sharing class pdAccount2Freee {
         parameters += '"address_attributes": {';
         parameters += '"zipcode": "' + acc.BillingPostalCode + '",';
         Integer prefCode = getPrefCode(acc.BillingState);
-        parameters += '"prefecture_code": ' + ((prefCode == null) ? 'null' : String.valueOf(prefCode)) + ',';
-        String[] billingStreet = acc.BillingStreet.split('\r\n');
-        if(billingStreet.size() == 0) {
-            parameters += '"street_name1": "' + acc.BillingCity + '",';
-        }
-        else {
-            parameters += '"street_name1": "' + acc.BillingCity + billingStreet[0] + '"';
-            if (billingStreet.size() >= 2) {
-                parameters += ',"street_name2": "' + billingStreet[1] + '"';
+        parameters += '"prefecture_code": ' + ((prefCode == null) ? 'null' : String.valueOf(prefCode)) + '';
+        if(acc.BillingStreet != null) {
+            parameters += ',';
+            String[] billingStreet = acc.BillingStreet.split('\r\n');
+            if(billingStreet.size() == 0) {
+                parameters += '"street_name1": "' + acc.BillingCity + '",';
+            }
+            else {
+                parameters += '"street_name1": "' + acc.BillingCity + billingStreet[0] + '"';
+                if (billingStreet.size() >= 2) {
+                    parameters += ',"street_name2": "' + billingStreet[1] + '"';
+                }
             }
         }
         parameters += '}';
