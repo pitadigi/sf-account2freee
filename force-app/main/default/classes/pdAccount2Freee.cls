@@ -8,7 +8,7 @@ public with sharing class pdAccount2Freee {
     @AuraEnabled
     public static void account2Freee(Id accountId) {
         // 取引先情報を取得する
-        Account acc = [select Id,Name,Phone,BillingPostalCode,BillingState,BillingCity,BillingStreet from Account where Id=:accountId];
+        Account acc = [select Id,Name,Phone,BillingPostalCode,BillingState,BillingCity,BillingStreet,LongName__c from Account where Id=:accountId];
 
         // 会社情報を取得する
         Integer companyId = getCompany();
@@ -88,7 +88,7 @@ public with sharing class pdAccount2Freee {
         String parameters = '{';
         parameters += '"company_id": ' + companyId + ',';
         parameters += '"name": "' + acc.Name + '",';
-        parameters += '"long_name": "' + acc.Name + '",';
+        parameters += '"long_name": "' + acc.LongName__c + '",';
         parameters += '"default_title": "' + '御中' + '",';
         parameters += '"phone": "' + acc.Phone + '",';
         parameters += '"address_attributes": {';

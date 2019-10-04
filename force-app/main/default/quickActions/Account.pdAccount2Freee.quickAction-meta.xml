@@ -2,8 +2,8 @@
 <QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
     <height>250</height>
     <label>Freee連携</label>
+    <lightningComponent>pdAccount2Freee</lightningComponent>
     <optionsCreateFeedItem>false</optionsCreateFeedItem>
-    <page>pdAccount2Free</page>
-    <type>VisualforcePage</type>
+    <type>LightningComponent</type>
     <width>-100</width>
 </QuickAction>
