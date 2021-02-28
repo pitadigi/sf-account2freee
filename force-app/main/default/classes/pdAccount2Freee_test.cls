@@ -1,6 +1,6 @@
 @isTest(SeeAllData=true)
 private class pdAccount2Freee_test {
-    /*
+/*
     @TestSetup
     static void setup(){
         Account acc = new Account();
@@ -14,7 +14,7 @@ private class pdAccount2Freee_test {
 
         insert acc;
     }
-    */
+*/
 
     @isTest
     static void test_account2Freee() {
